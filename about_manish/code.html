@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d9e4ec",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "primary-container": "#d7e2ea",
+                        "inverse-on-surface": "#303031",
+                        "inverse-surface": "#e4e2e2",
+                        "secondary-fixed-dim": "#ffaceb",
+                        "secondary-fixed": "#ffd7f2",
+                        "on-surface-variant": "#c4c7ca",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353535",
+                        "error-container": "#93000a",
+                        "on-surface": "#e4e2e2",
+                        "on-primary": "#273238",
+                        "tertiary-fixed-dim": "#d9c2b0",
+                        "primary-fixed-dim": "#bdc8d0",
+                        "tertiary-container": "#f4dcc9",
+                        "background": "#0C0C0C",
+                        "surface-container-low": "#1b1c1c",
+                        "on-tertiary-fixed": "#25190e",
+                        "inverse-primary": "#556067",
+                        "on-tertiary-fixed-variant": "#544436",
+                        "outline-variant": "#43474a",
+                        "on-tertiary": "#3c2e21",
+                        "on-secondary-fixed": "#390034",
+                        "surface-bright": "#393939",
+                        "surface-container": "#1f2020",
+                        "on-primary-container": "#5a656b",
+                        "on-secondary-fixed-variant": "#830079",
+                        "on-secondary-container": "#ffdaf2",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#b805aa",
+                        "surface-container-highest": "#353535",
+                        "on-primary-fixed-variant": "#3e484f",
+                        "secondary": "#ffaceb",
+                        "surface": "#131314",
+                        "primary": "#fcfdff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-background": "#e4e2e2",
+                        "tertiary-fixed": "#f6decb",
+                        "on-tertiary-container": "#716051",
+                        "on-primary-fixed": "#131d23",
+                        "tertiary": "#fffcff",
+                        "outline": "#8d9194",
+                        "surface-dim": "#131314",
+                        "surface-tint": "#bdc8d0",
+                        "on-secondary": "#5d0055"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-offset": "40px",
+                        "gutter": "24px",
+                        "container-padding": "4rem",
+                        "section-gap": "8rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Kanit"],
+                        "label-mono": ["Space Grotesk"],
+                        "body-lg": ["Kanit"],
+                        "display-hero": ["Kanit"],
+                        "headline-xl": ["Kanit"],
+                        "body-sm": ["Kanit"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-mono": ["10px", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.1em", "fontWeight": "400"}],
+                        "display-hero": ["120px", {"lineHeight": "0.9", "letterSpacing": "-0.05em", "fontWeight": "900"}],
+                        "headline-xl": ["80px", {"lineHeight": "1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-sm": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.15em", "fontWeight": "300"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .steel-gradient {
+            background: linear-gradient(180deg, #FFFFFF 0%, #8D9194 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cosmic-void {
+            background: radial-gradient(circle at 50% 50%, #1A1A1A 0%, #0C0C0C 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(215, 226, 234, 0.1);
+        }
+        .project-card-stack {
+            position: sticky;
+            top: 120px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg overflow-x-hidden cosmic-void">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 rounded-none bg-zinc-950/40 backdrop-blur-xl border-b border-[#D7E2EA]/10 flex justify-between items-center px-12 py-6 max-w-full mx-auto">
+<div class="flex items-center gap-4" onclick="window.location.href='{{DATA:SCREEN:SCREEN_6}}'" style="cursor: pointer;">
+<span class="material-symbols-outlined text-zinc-50" data-icon="model_training">model_training</span>
+<span class="text-2xl font-black tracking-widest text-zinc-50 font-['Kanit'] uppercase">MANISH</span>
+</div>
+<div class="hidden md:flex gap-8 items-center"><a class="font-['Kanit'] tracking-tighter uppercase font-bold text-zinc-400 hover:text-zinc-50 transition-colors duration-300" href="{{DATA:SCREEN:SCREEN_6}}">Home</a><a class="font-['Kanit'] tracking-tighter uppercase font-bold text-zinc-50 border-b-2 border-[#D7E2EA] transition-colors duration-300" href="{{DATA:SCREEN:SCREEN_7}}">About</a><a class="font-['Kanit'] tracking-tighter uppercase font-bold text-zinc-400 hover:text-zinc-50 transition-colors duration-300" href="{{DATA:SCREEN:SCREEN_2}}">Projects</a><a class="font-['Kanit'] tracking-tighter uppercase font-bold text-zinc-400 hover:text-zinc-50 transition-colors duration-300" href="{{DATA:SCREEN:SCREEN_11}}">Awards</a><a class="font-['Kanit'] tracking-tighter uppercase font-bold text-zinc-400 hover:text-zinc-50 transition-colors duration-300" href="{{DATA:SCREEN:SCREEN_12}}">Contact</a></div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold uppercase text-xs tracking-widest hover:scale-105 transition-transform" onclick="window.location.href='{{DATA:SCREEN:SCREEN_12}}'">
+            Work with me
+        </button>
+</nav>
+<main class="relative pt-32">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center px-container-padding">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<span class="font-label-mono text-label-mono text-primary-fixed uppercase mb-4 block">Architect of Virtual Realms</span>
+<h1 class="font-display-hero text-display-hero steel-gradient mb-8">CRAFTING DIMENSIONS</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        With over 5 years of pushing the boundaries of digital reality, I blend technical precision with artistic soul to create 3D experiences that resonate in the cosmic void.
+                    </p>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[3/4] rounded-xl overflow-hidden glass-panel p-2">
+<img alt="Manish Portrait" class="w-full h-full object-cover rounded-lg" data-alt="A professional, cinematic portrait of a 3D artist named Manish in a dark, high-end studio setting. He is wearing a minimalist black outfit, looking thoughtfully away from the camera. The lighting is dramatic and low-key, with cool blue and sharp white highlights that emphasize the contours of his face and the high-tech atmosphere. The background is a blurred digital workspace with faint glowing elements of a 3D modeling interface, maintaining a premium dark-mode aesthetic with deep blacks and subtle steel-grey tones." src="https://lh3.googleusercontent.com/aida/ADBb0ujpWDssvj-A2Z470frlG9M8gmYyCANNQ0AA6_cI7Rs_VT4alerl9cebsxkAqRgMJBOSuwJX-mYPDOpSdpLDOhFA3RAk5V3T_ZgGUBQnDu66aeeht4nM9Jg_7mg_MJEZn_2p8EeXCACQYgkZy6BwiC1EtpE33BmBOFsmnVjLRlu4oeMEVJkAAD-PQ2jEQLhlCQFZMBMDB2lkz93A4972BNr4LjSKYDOPoiVLfSHo8AWsFU7MIF-do7srTRRW82JcndVs9nHiviz2TA"/>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-secondary-container/20 blur-[100px] rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Biography Section -->
+<section class="py-section-gap px-container-padding">
+<div class="max-w-4xl mx-auto space-y-12">
+<div class="flex items-center gap-6">
+<div class="h-px flex-1 bg-outline-variant"></div>
+<h2 class="font-headline-md text-headline-md steel-gradient uppercase">The Journey</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-on-surface-variant">
+<p class="font-body-lg leading-relaxed">
+                        My obsession with the third dimension began with a simple question: How can we make the digital feel physical? This curiosity evolved into a 5-year career spanning across global brands and independent artistic ventures. I don't just build models; I construct atmospheres where light and shadow tell a story of their own.
+                    </p>
+<p class="font-body-lg leading-relaxed">
+                        Specializing in high-end 3D Modeling, photorealistic Rendering, and liquid-smooth Motion Design, I bridge the gap between abstract concepts and tangible visual masterpieces. Every project is an exploration of geometry, texture, and the infinite possibilities of the digital canvas.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Specialties Bento Grid -->
+<section class="py-section-gap px-container-padding bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline-xl text-headline-xl steel-gradient text-center mb-20">SPECIALTIES</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- 3D Modeling -->
+<div class="glass-panel p-12 rounded-xl flex flex-col justify-between group hover:border-primary-container/30 transition-all duration-500 min-h-[400px]">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6" data-icon="category">category</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-zinc-50">3D Modeling</h3>
+<p class="text-on-surface-variant">Hard surface and organic modeling with surgical precision. Topology that breathes and structures that endure.</p>
+</div>
+<div class="mt-8 opacity-0 group-hover:opacity-100 transition-opacity">
+<img class="w-full h-32 object-cover rounded-lg" data-alt="A highly detailed close-up of a complex 3D wireframe mesh representing a futuristic architectural structure. The mesh glows with a faint cyan light against a deep matte black background, showcasing intricate geometric patterns and technical precision. The visual style is clean, minimalist, and high-contrast, fitting a premium 3D artist's portfolio. The atmosphere is one of technological sophistication and digital craftsmanship." src="https://lh3.googleusercontent.com/aida/ADBb0uiwTyR3dogb4CCt8oGM_KF1cbkQj2yjK2K215JJymMsRF8CplXnydZmeqaawvP_wsNa1kwZ5__xYgZJ_I46Hgs4SH7pkSZ5PJdR44E65d3xTfxA_J9SBKdjdTFvEHDZkvwOCCKwyJe6Qe8pGHcEksrU4DAMbuemg3bj_KhA8RtRK_M6RxDdcBERKZkio0MziFSkn7PX-HVaUQLQscer-pJf54V1o4Mvnac0yxxIXUvl_Og9h81NPGfJYMlDed3sWfZ46eocCPauHg"/>
+</div>
+</div>
+<!-- Rendering -->
+<div class="glass-panel p-12 rounded-xl flex flex-col justify-between group hover:border-primary-container/30 transition-all duration-500 min-h-[400px]">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6" data-icon="light_mode">light_mode</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-zinc-50">Rendering</h3>
+<p class="text-on-surface-variant">Harnessing the power of light. From global illumination to complex PBR materials that defy the uncanny valley.</p>
+</div>
+<div class="mt-8 opacity-0 group-hover:opacity-100 transition-opacity">
+<img class="w-full h-32 object-cover rounded-lg" data-alt="A cinematic 3D render of a glass sphere floating in a dark vacuum, refracting a beam of intense white light into a spectrum of colors. The lighting is dramatic, with high contrast between the pitch-black environment and the brilliant, shimmering light effects. The surfaces are hyper-realistic, featuring subtle dust motes and lens flares that create a sense of physical weight and premium artistic quality. The overall mood is mysterious and immersive." src="https://lh3.googleusercontent.com/aida/ADBb0uhGoJoq802jWDMs5nzAPEU2_lrzfuP6_mpPWzjr2ZncUi4U5XuXwB0X8M99t3YVDoo57jfhvX7Ipe19k_pxJSAy3vcUEdjAir6eY0Nz_uILygcQc3o62T2WIuEw1YRFfUdm_bI46EbL-wslBP0usxe3fvaJUKxtcFGxI7GDUvLbC4J1h2hbb7ZyMbRCAFBeQ-1K4VdRadthk6ReQOG6lmLYE-V7B_-SEAerPaJ7exptlM8xteYrL3R4GIv6pl_00Ep08fySPAB6"/>
+</div>
+</div>
+<!-- Motion Design -->
+<div class="glass-panel p-12 rounded-xl flex flex-col justify-between group hover:border-primary-container/30 transition-all duration-500 min-h-[400px]">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6" data-icon="waves">waves</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-zinc-50">Motion</h3>
+<p class="text-on-surface-variant">Bringing pixels to life. Dynamic physics simulations and keyframe-perfect animations that capture the rhythm of motion.</p>
+</div>
+<div class="mt-8 opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="w-full h-32 bg-gradient-to-br from-primary-container/20 to-transparent rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary-container/40" data-icon="slow_motion_video">slow_motion_video</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Skills Stack -->
+<section class="py-section-gap px-container-padding relative overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<span class="font-label-mono text-label-mono text-primary-fixed uppercase mb-4 block">The Arsenal</span>
+<h2 class="font-headline-xl text-headline-xl steel-gradient">TECH STACK</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="p-8 border border-outline-variant/30 rounded-xl hover:bg-surface-container transition-colors group">
+<h4 class="font-headline-md text-headline-md text-zinc-600 group-hover:text-zinc-100 transition-colors">01</h4>
+<p class="font-label-mono text-primary-container mt-4">BLENDER</p>
+</div>
+<div class="p-8 border border-outline-variant/30 rounded-xl hover:bg-surface-container transition-colors group">
+<h4 class="font-headline-md text-headline-md text-zinc-600 group-hover:text-zinc-100 transition-colors">02</h4>
+<p class="font-label-mono text-primary-container mt-4">CINEMA 4D</p>
+</div>
+<div class="p-8 border border-outline-variant/30 rounded-xl hover:bg-surface-container transition-colors group">
+<h4 class="font-headline-md text-headline-md text-zinc-600 group-hover:text-zinc-100 transition-colors">03</h4>
+<p class="font-label-mono text-primary-container mt-4">UNREAL ENGINE</p>
+</div>
+<div class="p-8 border border-outline-variant/30 rounded-xl hover:bg-surface-container transition-colors group">
+<h4 class="font-headline-md text-headline-md text-zinc-600 group-hover:text-zinc-100 transition-colors">04</h4>
+<p class="font-label-mono text-primary-container mt-4">FRAMER MOTION</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 border-t border-[#D7E2EA]/5 bg-transparent mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl mx-auto gap-8">
+<div>
+<span class="text-zinc-50 font-bold text-2xl font-['Kanit'] tracking-widest uppercase">MANISH</span>
+<p class="text-zinc-500 font-['Kanit'] font-light text-sm tracking-wide mt-2">© 2024 Manish. Built for the cosmic void.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-zinc-500 font-['Kanit'] font-light text-sm tracking-wide hover:text-zinc-100 transition-colors duration-500" href="#">Instagram</a>
+<a class="text-zinc-500 font-['Kanit'] font-light text-sm tracking-wide hover:text-zinc-100 transition-colors duration-500" href="#">ArtStation</a>
+<a class="text-zinc-500 font-['Kanit'] font-light text-sm tracking-wide hover:text-zinc-100 transition-colors duration-500" href="#">Behance</a>
+<a class="text-zinc-500 font-['Kanit'] font-light text-sm tracking-wide hover:text-zinc-100 transition-colors duration-500" href="https://linkedin.com/in/d-manish-930514292" target="_blank">LinkedIn</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-8 bg-zinc-900/60 backdrop-blur-2xl rounded-full border border-[#D7E2EA]/20 px-6 py-3 shadow-2xl shadow-black/50 md:hidden"><a class="text-zinc-400 p-2 hover:scale-110 hover:text-zinc-50 transition-all active:scale-90" href="{{DATA:SCREEN:SCREEN_6}}"><span class="material-symbols-outlined" data-icon="home_max">home_max</span></a><a class="bg-[#D7E2EA] text-zinc-950 rounded-full p-2 scale-95 active:scale-90 transition-transform" href="{{DATA:SCREEN:SCREEN_7}}"><span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span></a><a class="text-zinc-400 p-2 hover:scale-110 hover:text-zinc-50 transition-all active:scale-90" href="{{DATA:SCREEN:SCREEN_2}}"><span class="material-symbols-outlined" data-icon="category">category</span></a><a class="text-zinc-400 p-2 hover:scale-110 hover:text-zinc-50 transition-all active:scale-90" href="{{DATA:SCREEN:SCREEN_11}}"><span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span></a><a class="text-zinc-400 p-2 hover:scale-110 hover:text-zinc-50 transition-all active:scale-90" href="{{DATA:SCREEN:SCREEN_12}}"><span class="material-symbols-outlined" data-icon="mail">mail</span></a></nav>
+</body></html>

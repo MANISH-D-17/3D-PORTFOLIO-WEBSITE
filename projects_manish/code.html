@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;700;800;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d9e4ec",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "primary-container": "#d7e2ea",
+                        "inverse-on-surface": "#303031",
+                        "inverse-surface": "#e4e2e2",
+                        "secondary-fixed-dim": "#ffaceb",
+                        "secondary-fixed": "#ffd7f2",
+                        "on-surface-variant": "#c4c7ca",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353535",
+                        "error-container": "#93000a",
+                        "on-surface": "#e4e2e2",
+                        "on-primary": "#273238",
+                        "tertiary-fixed-dim": "#d9c2b0",
+                        "primary-fixed-dim": "#bdc8d0",
+                        "tertiary-container": "#f4dcc9",
+                        "background": "#131314",
+                        "surface-container-low": "#1b1c1c",
+                        "on-tertiary-fixed": "#25190e",
+                        "inverse-primary": "#556067",
+                        "on-tertiary-fixed-variant": "#544436",
+                        "outline-variant": "#43474a",
+                        "on-tertiary": "#3c2e21",
+                        "on-secondary-fixed": "#390034",
+                        "surface-bright": "#393939",
+                        "surface-container": "#1f2020",
+                        "on-primary-container": "#5a656b",
+                        "on-secondary-fixed-variant": "#830079",
+                        "on-secondary-container": "#ffdaf2",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#b805aa",
+                        "surface-container-highest": "#353535",
+                        "on-primary-fixed-variant": "#3e484f",
+                        "secondary": "#ffaceb",
+                        "surface": "#131314",
+                        "primary": "#fcfdff",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-background": "#e4e2e2",
+                        "tertiary-fixed": "#f6decb",
+                        "on-tertiary-container": "#716051",
+                        "on-primary-fixed": "#131d23",
+                        "tertiary": "#fffcff",
+                        "outline": "#8d9194",
+                        "surface-dim": "#131314",
+                        "surface-tint": "#bdc8d0",
+                        "on-secondary": "#5d0055"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-offset": "40px",
+                        "gutter": "24px",
+                        "container-padding": "4rem",
+                        "section-gap": "8rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Kanit"],
+                        "label-mono": ["Space Grotesk"],
+                        "body-lg": ["Kanit"],
+                        "display-hero": ["Kanit"],
+                        "headline-xl": ["Kanit"],
+                        "body-sm": ["Kanit"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-mono": ["10px", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.1em", "fontWeight": "400"}],
+                        "display-hero": ["120px", {"lineHeight": "0.9", "letterSpacing": "-0.05em", "fontWeight": "900"}],
+                        "headline-xl": ["80px", {"lineHeight": "1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-sm": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.15em", "fontWeight": "300"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0c0c0c;
+            color: #e4e2e2;
+            cursor: crosshair;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(215, 226, 234, 0.1);
+        }
+        .cosmic-gradient {
+            background: linear-gradient(135deg, #bdc8d0 0%, #5a656b 100%);
+        }
+        .project-card-container {
+            perspective: 1000px;
+        }
+        .sticky-card {
+            position: sticky;
+            top: 120px;
+        }
+    </style>
+</head>
+<body class="font-body-lg overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 rounded-none bg-zinc-950/40 backdrop-blur-xl border-b border-[#D7E2EA]/10 flex justify-between items-center px-12 py-6 max-w-full mx-auto">
+<a class="flex items-center gap-4" href="{{DATA:SCREEN:SCREEN_6}}">
+<span class="material-symbols-outlined text-zinc-100" style="font-variation-settings: 'FILL' 1;">model_training</span>
+<span class="text-2xl font-black tracking-widest text-zinc-50 font-['Kanit'] uppercase">MANISH</span>
+</a>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Kanit'] tracking-tighter uppercase font-bold text-zinc-400 hover:text-zinc-50 transition-colors duration-300" href="{{DATA:SCREEN:SCREEN_6}}">Home</a>
+<a class="font-['Kanit'] tracking-tighter uppercase font-bold text-zinc-50 border-b-2 border-[#D7E2EA]" href="{{DATA:SCREEN:SCREEN_2}}">Work</a>
+<a class="font-['Kanit'] tracking-tighter uppercase font-bold text-zinc-400 hover:text-zinc-50 transition-colors duration-300" href="{{DATA:SCREEN:SCREEN_11}}">Awards</a>
+<a class="font-['Kanit'] tracking-tighter uppercase font-bold text-zinc-400 hover:text-zinc-50 transition-colors duration-300" href="{{DATA:SCREEN:SCREEN_7}}">About</a>
+</div>
+<a class="cosmic-gradient text-zinc-950 px-8 py-3 rounded-full font-bold tracking-tighter uppercase text-sm hover:scale-105 transition-transform duration-300 inline-block" href="{{DATA:SCREEN:SCREEN_12}}">
+            Work with me
+        </a>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative z-10">
+<!-- Hero Title Section -->
+<header class="h-screen flex flex-col justify-center items-center px-container-padding text-center">
+<div class="space-y-4">
+<span class="font-label-mono text-label-mono text-primary-fixed uppercase">Portfolio Edition 2024</span>
+<h1 class="font-display-hero text-display-hero uppercase">SELECTED<br/><span class="text-zinc-700">CREATIONS</span></h1>
+<p class="max-w-2xl mx-auto font-body-lg text-on-surface-variant mt-8">
+                    An archive of spatial experiments, cinematic motion, and high-fidelity 3D visualization crafted at the intersection of geometry and light.
+                </p>
+</div>
+<div class="mt-20 animate-bounce">
+<span class="material-symbols-outlined text-zinc-500 text-4xl">expand_more</span>
+</div>
+</header>
+<!-- Category Filter -->
+<section class="sticky top-[80px] z-40 py-8 px-12 flex justify-center gap-4 pointer-events-none">
+<div class="glass-card px-6 py-3 rounded-full flex gap-8 pointer-events-auto">
+<button class="text-zinc-50 font-label-mono uppercase text-xs tracking-[0.2em]">All Projects</button>
+<button class="text-zinc-500 font-label-mono uppercase text-xs tracking-[0.2em] hover:text-zinc-50">Motion Design</button>
+<button class="text-zinc-500 font-label-mono uppercase text-xs tracking-[0.2em] hover:text-zinc-50">Branding</button>
+<button class="text-zinc-500 font-label-mono uppercase text-xs tracking-[0.2em] hover:text-zinc-50">3D Visualization</button>
+</div>
+</section>
+<!-- Project Grid: Sticky Stack Layout -->
+<section class="max-w-7xl mx-auto px-gutter py-section-gap space-y-32">
+<!-- Project Card 1: 3D Visualization -->
+<div class="sticky-card">
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="p-12 flex flex-col justify-between">
+<div>
+<span class="font-label-mono text-label-mono text-secondary tracking-widest uppercase mb-4 block">3D VISUALIZATION</span>
+<h2 class="font-headline-xl text-headline-xl text-zinc-100 mb-6">NEBULOUS<br/>VOID</h2>
+<p class="text-zinc-400 font-body-lg max-w-sm">Exploring the density of light in a vacuum through generative crystalline structures.</p>
+</div>
+<div class="pt-12">
+<a class="group/btn inline-flex items-center gap-4 text-zinc-50 font-bold uppercase tracking-widest text-sm" href="#">
+                                    View Case Study
+                                    <span class="material-symbols-outlined group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="relative h-[600px] bg-zinc-900">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="A highly detailed 3D render of abstract crystalline structures floating in a dark, atmospheric void. The scene is illuminated by soft, cinematic cyan and deep purple light rays filtering through a dense digital fog. High-fidelity textures of glass and chrome reflect the surrounding cosmic environment, maintaining a premium, tech-focused aesthetic that feels spatial and high-end." src="https://lh3.googleusercontent.com/aida/ADBb0uiwTyR3dogb4CCt8oGM_KF1cbkQj2yjK2K215JJymMsRF8CplXnydZmeqaawvP_wsNa1kwZ5__xYgZJ_I46Hgs4SH7pkSZ5PJdR44E65d3xTfxA_J9SBKdjdTFvEHDZkvwOCCKwyJe6Qe8pGHcEksrU4DAMbuemg3bj_KhA8RtRK_M6RxDdcBERKZkio0MziFSkn7PX-HVaUQLQscer-pJf54V1o4Mvnac0yxxIXUvl_Og9h81NPGfJYMlDed3sWfZ46eocCPauHg"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 2: Motion Design -->
+<div class="sticky-card">
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="order-2 md:order-1 relative h-[600px] bg-zinc-900">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Cinematic motion design frame featuring a series of interlocking mechanical rings floating in a dark vacuum. The lighting is dramatic and moody, utilizing sharp white rim lights to define the complex 3D geometry. The overall style is technical and precise, with a dark slate and charcoal color palette that feels professional and futuristic." src="https://lh3.googleusercontent.com/aida/ADBb0ujpWDssvj-A2Z470frlG9M8gmYyCANNQ0AA6_cI7Rs_VT4alerl9cebsxkAqRgMJBOSuwJX-mYPDOpSdpLDOhFA3RAk5V3T_ZgGUBQnDu66aeeht4nM9Jg_7mg_MJEZn_2p8EeXCACQYgkZy6BwiC1EtpE33BmBOFsmnVjLRlu4oeMEVJkAAD-PQ2jEQLhlCQFZMBMDB2lkz93A4972BNr4LjSKYDOPoiVLfSHo8AWsFU7MIF-do7srTRRW82JcndVs9nHiviz2TA"/>
+</div>
+<div class="order-1 md:order-2 p-12 flex flex-col justify-between bg-zinc-900/40">
+<div>
+<span class="font-label-mono text-label-mono text-secondary tracking-widest uppercase mb-4 block">MOTION DESIGN</span>
+<h2 class="font-headline-xl text-headline-xl text-zinc-100 mb-6">KINETIC<br/>FLOW</h2>
+<p class="text-zinc-400 font-body-lg max-w-sm">A study on mechanical synchronicity and the fluidity of rigid body dynamics.</p>
+</div>
+<div class="pt-12">
+<a class="group/btn inline-flex items-center gap-4 text-zinc-50 font-bold uppercase tracking-widest text-sm" href="#">
+                                    View Case Study
+                                    <span class="material-symbols-outlined group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 3: Branding -->
+<div class="sticky-card pb-32">
+<div class="glass-card rounded-xl overflow-hidden group">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="p-12 flex flex-col justify-between">
+<div>
+<span class="font-label-mono text-label-mono text-secondary tracking-widest uppercase mb-4 block">BRANDING</span>
+<h2 class="font-headline-xl text-headline-xl text-zinc-100 mb-6">ORBIT<br/>SYSTEMS</h2>
+<p class="text-zinc-400 font-body-lg max-w-sm">Visual identity for a space-tech startup focusing on minimal geometry and cosmic gradients.</p>
+</div>
+<div class="pt-12">
+<a class="group/btn inline-flex items-center gap-4 text-zinc-50 font-bold uppercase tracking-widest text-sm" href="#">
+                                    View Case Study
+                                    <span class="material-symbols-outlined group-hover/btn:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="relative h-[600px] bg-zinc-900">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="A minimalist brand identity design showcased on a premium 3D textured surface. The aesthetic features high-contrast black and white elements with subtle holographic accents. The composition is clean and center-weighted, using generous negative space to emphasize technical precision and modern luxury. The mood is sophisticated and authoritative." src="https://lh3.googleusercontent.com/aida/ADBb0uhGoJoq802jWDMs5nzAPEU2_lrzfuP6_mpPWzjr2ZncUi4U5XuXwB0X8M99t3YVDoo57jfhvX7Ipe19k_pxJSAy3vcUEdjAir6eY0Nz_uILygcQc3o62T2WIuEw1YRFfUdm_bI46EbL-wslBP0usxe3fvaJUKxtcFGxI7GDUvLbC4J1h2hbb7ZyMbRCAFBeQ-1K4VdRadthk6ReQOG6lmLYE-V7B_-SEAerPaJ7exptlM8xteYrL3R4GIv6pl_00Ep08fySPAB6"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Details & Metrics -->
+<section class="max-w-7xl mx-auto px-gutter py-section-gap grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 glass-card p-12 rounded-lg flex flex-col justify-end min-h-[400px] relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-zinc-50">TECHNICAL RIGOR</h3>
+<p class="text-zinc-400 mt-4 max-w-md">Every project starts with a mathematical approach to composition. We don't just render images; we simulate environments with physical accuracy.</p>
+</div>
+<div class="absolute -right-20 -top-20 opacity-10">
+<span class="material-symbols-outlined text-[300px]" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+</div>
+</div>
+<div class="glass-card p-12 rounded-lg flex flex-col justify-center items-center text-center">
+<span class="text-zinc-500 font-label-mono uppercase mb-4">Total Renders</span>
+<span class="font-display-hero text-headline-xl text-zinc-50 tracking-tighter">1.2K+</span>
+</div>
+<div class="glass-card p-12 rounded-lg flex flex-col justify-center items-center text-center">
+<span class="text-zinc-500 font-label-mono uppercase mb-4">Clients Served</span>
+<span class="font-display-hero text-headline-xl text-zinc-50 tracking-tighter">48</span>
+</div>
+<div class="md:col-span-2 glass-card p-12 rounded-lg flex items-center justify-between">
+<div>
+<h4 class="font-headline-md text-zinc-50 mb-2">READY TO BUILD?</h4>
+<p class="text-zinc-500">Let's discuss your next cinematic project.</p>
+</div>
+<a class="cosmic-gradient text-zinc-950 px-12 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:scale-110 transition-transform" href="{{DATA:SCREEN:SCREEN_12}}">
+                    CONTACT
+                </a>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile Primary, Desktop Secondary) -->
+<nav class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-8 bg-zinc-900/60 backdrop-blur-2xl text-[#D7E2EA] rounded-full border border-[#D7E2EA]/20 px-6 py-3 shadow-2xl shadow-black/50">
+<a class="bg-[#D7E2EA] text-zinc-950 rounded-full p-2 scale-95 active:scale-90 transition-transform flex items-center justify-center" href="{{DATA:SCREEN:SCREEN_6}}">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_max</span>
+</a>
+<a class="text-zinc-400 p-2 hover:scale-110 hover:text-zinc-50 transition-all flex items-center justify-center" href="{{DATA:SCREEN:SCREEN_7}}">
+<span class="material-symbols-outlined">person</span>
+</a>
+<a class="text-zinc-400 p-2 hover:scale-110 hover:text-zinc-50 transition-all flex items-center justify-center" href="{{DATA:SCREEN:SCREEN_2}}">
+<span class="material-symbols-outlined">category</span>
+</a>
+<a class="text-zinc-400 p-2 hover:scale-110 hover:text-zinc-50 transition-all flex items-center justify-center" href="{{DATA:SCREEN:SCREEN_11}}">
+<span class="material-symbols-outlined">workspace_premium</span>
+</a>
+<a class="text-zinc-400 p-2 hover:scale-110 hover:text-zinc-50 transition-all flex items-center justify-center" href="{{DATA:SCREEN:SCREEN_12}}">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</nav>
+<!-- Footer Section -->
+<footer class="w-full py-20 px-12 border-t border-[#D7E2EA]/5 bg-transparent">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl mx-auto gap-8">
+<div class="flex flex-col gap-4 text-center md:text-left">
+<span class="text-zinc-50 font-bold text-2xl tracking-widest uppercase">MANISH</span>
+<p class="font-['Kanit'] font-light text-sm tracking-wide text-zinc-500">
+                    © 2024 Manish. Built for the cosmic void.
+                </p>
+</div>
+<div class="flex gap-12">
+<a class="text-zinc-500 font-['Kanit'] font-light text-sm tracking-wide hover:text-zinc-100 transition-colors duration-500" href="#">Instagram</a>
+<a class="text-zinc-500 font-['Kanit'] font-light text-sm tracking-wide hover:text-zinc-100 transition-colors duration-500" href="#">ArtStation</a>
+<a class="text-zinc-500 font-['Kanit'] font-light text-sm tracking-wide hover:text-zinc-100 transition-colors duration-500" href="#">Behance</a>
+<a class="text-zinc-500 font-['Kanit'] font-light text-sm tracking-wide hover:text-zinc-100 transition-colors duration-500" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>

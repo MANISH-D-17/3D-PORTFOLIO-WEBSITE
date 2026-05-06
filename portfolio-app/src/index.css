@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-tertiary-fixed: #f6decb;
+  --color-on-primary: #273238;
+  --color-tertiary-fixed-dim: #d9c2b0;
+  --color-surface: #131314;
+  --color-primary-fixed: #d9e4ec;
+  --color-secondary-container: #b805aa;
+  --color-outline-variant: #43474a;
+  --color-on-secondary: #5d0055;
+  --color-surface-container-lowest: #0e0e0f;
+  --color-surface-dim: #131314;
+  --color-secondary: #ffaceb;
+  --color-inverse-primary: #556067;
+  --color-error: #ffb4ab;
+  --color-tertiary: #fffcff;
+  --color-primary-container: #d7e2ea;
+  --color-secondary-fixed-dim: #ffaceb;
+  --color-surface-container: #1f2020;
+  --color-surface-container-low: #1b1c1c;
+  --color-on-secondary-container: #ffdaf2;
+  --color-on-tertiary: #3c2e21;
+  --color-outline: #8d9194;
+  --color-background: #131314;
+  --color-on-tertiary-fixed: #25190e;
+  --color-primary-fixed-dim: #bdc8d0;
+  --color-on-surface: #e4e2e2;
+  --color-on-tertiary-container: #716051;
+  --color-on-background: #e4e2e2;
+  --color-surface-container-high: #2a2a2a;
+  --color-inverse-on-surface: #303031;
+  --color-error-container: #93000a;
+  --color-on-primary-fixed: #131d23;
+  --color-inverse-surface: #e4e2e2;
+  --color-on-surface-variant: #c4c7ca;
+  --color-surface-variant: #353535;
+  --color-on-tertiary-fixed-variant: #544436;
+  --color-on-error-container: #ffdad6;
+  --color-surface-bright: #393939;
+  --color-surface-container-highest: #353535;
+  --color-on-primary-container: #5a656b;
+  --color-secondary-fixed: #ffd7f2;
+  --color-surface-tint: #bdc8d0;
+  --color-on-secondary-fixed-variant: #830079;
+  --color-on-error: #690005;
+  --color-tertiary-container: #f4dcc9;
+  --color-primary: #fcfdff;
+  --color-on-primary-fixed-variant: #3e484f;
+  --color-on-secondary-fixed: #390034;
+
+  /* Border Radius */
+  --radius-DEFAULT: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --spacing-container-padding: 4rem;
+  --spacing-section-gap: 8rem;
+  --spacing-gutter: 24px;
+  --spacing-stack-offset: 40px;
+
+  /* Font Families */
+  --font-headline-md: "Kanit", sans-serif;
+  --font-label-mono: "Space Grotesk", monospace;
+  --font-headline-xl: "Kanit", sans-serif;
+  --font-body-sm: "Kanit", sans-serif;
+  --font-body-lg: "Kanit", sans-serif;
+  --font-display-hero: "Kanit", sans-serif;
+
+  /* Font Sizes */
+  --text-headline-md: 48px;
+  --text-label-mono: 10px;
+  --text-headline-xl: 80px;
+  --text-body-sm: 12px;
+  --text-body-lg: 16px;
+  --text-display-hero: 120px;
+}
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/container-queries";
+
+:root {
+  --bg-void: #0C0C0C;
+  --text-primary: #fcfdff;
+}
+
+body {
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  font-family: 'Kanit', sans-serif;
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0c0c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Marquee Animations */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 40s linear infinite;
+}
+
+.marquee-track:hover, .marquee-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Gradients */
+.steel-gradient {
+  background: linear-gradient(to bottom, #fff 0%, #666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cosmic-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+}

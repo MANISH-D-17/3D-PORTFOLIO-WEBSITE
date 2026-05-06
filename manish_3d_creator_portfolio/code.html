@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MANISH | 3D Creator Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700;800;900&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f6decb",
+                        "on-primary": "#273238",
+                        "tertiary-fixed-dim": "#d9c2b0",
+                        "surface": "#131314",
+                        "primary-fixed": "#d9e4ec",
+                        "secondary-container": "#b805aa",
+                        "outline-variant": "#43474a",
+                        "on-secondary": "#5d0055",
+                        "surface-container-lowest": "#0e0e0f",
+                        "surface-dim": "#131314",
+                        "secondary": "#ffaceb",
+                        "inverse-primary": "#556067",
+                        "error": "#ffb4ab",
+                        "tertiary": "#fffcff",
+                        "primary-container": "#d7e2ea",
+                        "secondary-fixed-dim": "#ffaceb",
+                        "surface-container": "#1f2020",
+                        "surface-container-low": "#1b1c1c",
+                        "on-secondary-container": "#ffdaf2",
+                        "on-tertiary": "#3c2e21",
+                        "outline": "#8d9194",
+                        "background": "#131314",
+                        "on-tertiary-fixed": "#25190e",
+                        "primary-fixed-dim": "#bdc8d0",
+                        "on-surface": "#e4e2e2",
+                        "on-tertiary-container": "#716051",
+                        "on-background": "#e4e2e2",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#303031",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#131d23",
+                        "inverse-surface": "#e4e2e2",
+                        "on-surface-variant": "#c4c7ca",
+                        "surface-variant": "#353535",
+                        "on-tertiary-fixed-variant": "#544436",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#393939",
+                        "surface-container-highest": "#353535",
+                        "on-primary-container": "#5a656b",
+                        "secondary-fixed": "#ffd7f2",
+                        "surface-tint": "#bdc8d0",
+                        "on-secondary-fixed-variant": "#830079",
+                        "on-error": "#690005",
+                        "tertiary-container": "#f4dcc9",
+                        "primary": "#fcfdff",
+                        "on-primary-fixed-variant": "#3e484f",
+                        "on-secondary-fixed": "#390034"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "4rem",
+                        "section-gap": "8rem",
+                        "gutter": "24px",
+                        "stack-offset": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Kanit"],
+                        "label-mono": ["Space Grotesk"],
+                        "headline-xl": ["Kanit"],
+                        "body-sm": ["Kanit"],
+                        "body-lg": ["Kanit"],
+                        "display-hero": ["Kanit"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-mono": ["10px", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "500"}],
+                        "headline-xl": ["80px", {"lineHeight": "1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-sm": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.15em", "fontWeight": "300"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.1em", "fontWeight": "400"}],
+                        "display-hero": ["120px", {"lineHeight": "0.9", "letterSpacing": "-0.05em", "fontWeight": "900"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0C0C0C;
+            color: #e4e2e2;
+            cursor: crosshair;
+        }
+        .cosmic-gradient {
+            background: linear-gradient(45deg, #b805aa, #ffaceb, #d9e4ec);
+        }
+        .steel-gradient {
+            background: linear-gradient(180deg, #FFFFFF 0%, #717171 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(215, 226, 234, 0.1);
+        }
+        .marquee-track {
+            display: flex;
+            width: fit-content;
+            animation: scroll 30s linear infinite;
+        }
+        .marquee-track-reverse {
+            display: flex;
+            width: fit-content;
+            animation: scroll-reverse 30s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        @keyframes scroll-reverse {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0); }
+        }
+        .sticky-card {
+            position: sticky;
+            top: 100px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-lg">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
+<nav class="flex justify-between items-center px-10 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='{{DATA:SCREEN:SCREEN_6}}'">
+<span class="material-symbols-outlined text-slate-200" data-icon="blur_on">blur_on</span>
+<span class="text-2xl font-black tracking-tighter text-slate-100 font-['Kanit'] uppercase">MANISH</span>
+</div>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-['Kanit'] uppercase tracking-widest text-sm text-white border-b border-white pb-1 hover:tracking-widest transition-all duration-300" href="{{DATA:SCREEN:SCREEN_6}}">HOME</a>
+<a class="font-['Kanit'] uppercase tracking-widest text-sm text-slate-400 hover:text-white transition-all duration-300 hover:tracking-widest" href="{{DATA:SCREEN:SCREEN_2}}">WORK</a>
+<a class="font-['Kanit'] uppercase tracking-widest text-sm text-slate-400 hover:text-white transition-all duration-300 hover:tracking-widest" href="{{DATA:SCREEN:SCREEN_7}}">ABOUT</a>
+</div>
+<button class="px-6 py-2 rounded-full border border-white/20 font-['Kanit'] uppercase tracking-widest text-sm text-slate-200 hover:bg-white hover:text-black transition-all duration-500" onclick="window.location.href='{{DATA:SCREEN:SCREEN_12}}'">
+                CONTACT
+            </button>
+</nav>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-6 relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-purple-600 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-orange-400 rounded-full blur-[120px]"></div>
+</div>
+<div class="z-10 text-center max-w-6xl">
+<p class="font-label-mono text-label-mono text-secondary mb-8 uppercase tracking-[0.4em]">DIGITAL CRAFTSMANSHIP</p>
+<h1 class="font-display-hero text-display-hero steel-gradient uppercase mb-6 leading-none select-none">
+                    Hi, i'm manish
+                </h1>
+<p class="font-headline-md text-slate-400 max-w-3xl mx-auto mb-16 font-light leading-snug">
+                    A 3D creator driven by crafting striking and <span class="text-white">unforgettable projects</span>
+</p>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+<div class="relative w-72 h-96 md:w-[500px] md:h-[600px] rounded-lg overflow-hidden glass-panel mx-auto">
+<img alt="Manish Portrait" class="w-full h-full object-cover transition-all duration-700" data-alt="A striking and atmospheric high-end portrait of a 3D creator against a dark cinematic background. The lighting is dramatic and moody, featuring sharp rim lighting in vibrant neon purple and soft orange tones that emphasize facial features and a professional posture. The overall aesthetic is minimalist and premium, blending deep matte black textures with futuristic digital accents to suggest a high-tech creative workspace." src="https://lh3.googleusercontent.com/aida/ADBb0uhGoJoq802jWDMs5nzAPEU2_lrzfuP6_mpPWzjr2ZncUi4U5XuXwB0X8M99t3YVDoo57jfhvX7Ipe19k_pxJSAy3vcUEdjAir6eY0Nz_uILygcQc3o62T2WIuEw1YRFfUdm_bI46EbL-wslBP0usxe3fvaJUKxtcFGxI7GDUvLbC4J1h2hbb7ZyMbRCAFBeQ-1K4VdRadthk6ReQOG6lmLYE-V7B_-SEAerPaJ7exptlM8xteYrL3R4GIv6pl_00Ep08fySPAB6"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Marquee Section -->
+<section class="py-20 border-y border-white/5 bg-[#0C0C0C]">
+<div class="overflow-hidden space-y-8">
+<div class="marquee-track gap-8 px-4">
+<img class="h-40 rounded-lg" data-alt="A smooth, looping 3D animation of fluid, abstract metallic spheres merging and separating in a zero-gravity environment. The surface reflects a dark, cinematic space with neon pink and electric blue accents, creating a high-contrast and technically precise visual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTAy0C1YX4dyP70EQua4O6wHk3dA5JiVeh9pUedtL6i5SEyqUVN_yGfUC00jaHl-h8FMvKNXLWv3g__uxKodgSeLf4BskPpNhl4ZsSKekOJ8Fi77c7Q1v7TG1T7Zmi9TcdZ5fKXx0GqAbr2Ww7SYNjaJCzPBkUgmcazHPzFVq_4198aXoOtEf7L1YiImE7EL-EcHX0L59qDxfiaAewUiOUuIdZ6lEb6-VJmA_w4epIoq0FX03B3BhdUzO4l-GkKXQ4O4fhtgxnPbQ"/>
+<img class="h-40 rounded-lg" data-alt="An intricate 3D motion graphic showing complex architectural elements rotating slowly. The structure is composed of matte black glass and polished steel, illuminated by a pulsing cosmic light source that casts deep shadows and brilliant highlights across the geometric surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLnCQfLLLcySEZfi_YqwqZl7b8UZQjS-0BgGHtszOsvj6Hbj6CXDUIWrj0ur1nofZ62J-qwtHZtNqx0GHxYbvTzja00JMkw5r7oNzbaCrV7X8_LNB7Y5MtpdS16ux6prmcf0i-HaqaKaUxhZAk2sLXMRd7_ifpEu3bKHiBOdTF0hg02qMwii2fxWCDh2WrRX3GGwHYrck3up-AKtY7hELRV1l4syKfH2UD8GTS0oUe3FeLZHFifMO98qj8GutchkKewrDRwV3oUFE"/>
+<img class="h-40 rounded-lg" data-alt="Floating crystalline shards oscillating in a rhythmic pattern. The animation features hyper-realistic light refraction and dispersion, with a palette dominated by deep blacks and vibrant, prismatic color shifts that align with a high-end minimalist digital brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcHyYeRE3c7lHciQMuA5YQvhfqLgA990RwzmBtBSwtlnR-GQBWDmjKKWva2VYVionSDPVnMBQRb-Z0iYQPhl0OmetHr6u3pjP2VcUiT5Zb2OzvNeuGWplh03lFt8osVKUOgucEUzEpbgFNx2e9maBymhzCA-QT3hJAWPjFG23zRqJR_K8z2lyLCzz6CFmol-miEfj6XmhIFNePWnY6b9-LpmQqOh_1LDmJio3UD076fxGQY2Ok1GiwBj1wANqf7hnOpwEVYZQi_EU"/>
+<!-- Duplicate for infinite scroll -->
+<img class="h-40 rounded-lg" data-alt="A smooth, looping 3D animation of fluid, abstract metallic spheres merging and separating in a zero-gravity environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4GD-VT5Cjr0PQ0RLPogw54QTDVsFyygzufPrhcFvEzHqbLDr8GTZZ8Ovjkb5zl1GvqE2xn1pOtisdbbE928egW1Wm4hbT1e22LaU2r2R6WUYerNgni8ZINlKDn4iZ9pjWLWI-c1UnAYXkmh0b4N_P_lAH5D6WZRe7czacyOkMDqYvh0PV9Lr-MUha0MvAkBN3hAdwiB0fGwEH3qonBTelBh4vzyBemFe9hg7WN438D9hUTbywMeN4maCFPSB5PjEStj8EDQYMpuM"/>
+<img class="h-40 rounded-lg" data-alt="An intricate 3D motion graphic showing complex architectural elements rotating slowly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjcnkqc85wgvckpxU1n-LdBEWeNWcWX8uZ8yDgSNEhA4UWvo3HSUrUjwzZeWPazm-YV-m8jDqjfiaDQV5vv1fYp4J3ze2x0aKtcEKmeFZEdhJRQ82ZoaYzEqxHZeceE0Bz-v8_OC90ljL9gvc4zUjTL8PTX5A3-qqvmwIKg021AFw-WdyOK4nCcaKDVIFXwoUXzvdJqKkMXnYQY5ddNDPTYaSllvvT28jytC4wcnVtRYzLViLVXfJQwBqEsIiIjSP-wur9J94OblA"/>
+</div>
+<div class="marquee-track-reverse gap-8 px-4">
+<img class="h-40 rounded-lg" data-alt="A futuristic 3D rendering of complex mechanical gears and clockwork components floating in a void. The metal has a brushed titanium finish, and the scene is lit with soft, atmospheric lighting that highlights the precision engineering and premium craftsmanship of the creator's style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD270xCoH7Iw45VKhcw4Mg9rQYnyHj1BsSRTVVDRbD8JNtU_wwZ0mhI4EZIEhkXJ4gGpyw1pwzfrl1HCmfr1XsiCemvExwk1rDjN8PyJ9dKuePDRvgKfNbTXDwscQ_FDnGJwWvKFdVWw2LfvTtnwoHXX3AYdCogJnbwMsFgznF27jFtZVhRA_YJ12APoT8zqdq2pMwV6OrwsUnWXsHjWbw1EWjv6LvPHQPpaexgDEHttIxCzEizD3OPy50d9YXJLBMkmjzF9VjK5_A"/>
+<img class="h-40 rounded-lg" data-alt="Dynamic 3D typography elements deconstructing and reforming in a dark space. The letters are thick and weighted, featuring a high-contrast black-on-black texture with thin glowing edges that provide a sense of physical depth and modern glassmorphism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1LxLucHGvkCPykVQlRCD8iRRJoXzGVk5PbFd7wQfuicxH6Q_YLsO21kthU1LTLoEWbJkMAdE59RG1F230u76vkgVw-dD6Fquxf22qnXQYS-2HIHJ7o-YdUwzMJZsFLlXOJAm3DdRxo1Za7hzLAsZ2D8FXD7H0XcgN8Yxh_sn3lZdoHtxr0Wn6PFR2ybbVMrz3ctuJXduF0qwtNAfezs0QhiBui56qR0OqdvitNtWY_4NBJZrZUedUmICcNsgdJ7JGlV-5o8xQ3uY"/>
+<img class="h-40 rounded-lg" data-alt="A sequence of abstract 3D forms pulsating like a digital heart. The textures are organic yet synthetic, utilizing a sophisticated palette of deep navy, vibrant violet, and shimmering silver to create an immersive and technically advanced visual experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG3Y1fDH1YVgXoO9Unq_MzdAxJXCiPWEZNuwWpMvXp136pUf9lx3XsO7AJO2Tco3AnNF3EOorSzGnaPAK333aaC2h5F43wdqB_46viHXshocNp4L2LBnFydwteMSCxYwslLMUmVXvGE_152yNdxe9vZYP58xOdCpLExaS3Swpf8qREEkBxAnIbkvntshqWNjcbYJmodod1i1saIcP71WZ4BAEb8DeQfuhLZAYjunEHR-xvqZ72jLOSBrIEMAHc_sZQkClJSw-aSHM"/>
+<!-- Duplicate for infinite scroll -->
+<img class="h-40 rounded-lg" data-alt="A futuristic 3D rendering of complex mechanical gears and clockwork components floating in a void." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxynUgGp4N7Di6QZufVAi6VFNHPK5BDe-Ztc56GR4ypqEtGulho5Rk095KlIFNVdX9w7bIx2iva4k92PTCf72RY64AlAFoatNkPy-UBLMf2uFecdULCV5GWfZ0zTf-Y--hOetx4EI7arzrmcOKzUqbEy4dyFwg1gaw85K85Yrnq4QqfMq9-4bB6o3S8uTdpR3Kggsby7NGTaycGWZcRpw1ZHtiBkvSGPeucjuVoaHvfuGnaYcL7lRYJE2_7q9th8aU_XjBfqRO8_Q"/>
+<img class="h-40 rounded-lg" data-alt="Dynamic 3D typography elements deconstructing and reforming in a dark space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEuL4BRoZ_MqnaeqoXsppNLYqHsqrXLK7Do6NAYQBRTDAjxct_oLR5Vj051YpmNQ04NrJb0AeiRCTJearTtXNfSKmDwzn3yN9_GSqI2o-p1aNbLysztpF_FvyIItwoN38WFMu_dE7i5LMhGn3zVhYsykxqPObbTDd78L1sgj_yDjLux3awN9bPWy7zTgTHHrQjwsmCH1L5OWZftqXZp0xjjEfRo-AJian6mtL04MLnmKKSsF21sIKuw5eTypVYnbaBAMS60aiTuPs"/>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap px-container-padding max-w-screen-2xl mx-auto relative" id="about">
+<span class="material-symbols-outlined absolute top-20 left-10 text-6xl text-purple-500 opacity-20" data-icon="polymer">polymer</span>
+<span class="material-symbols-outlined absolute bottom-20 right-10 text-6xl text-orange-400 opacity-20" data-icon="deployed_code">deployed_code</span>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-4">
+<h2 class="font-headline-xl text-headline-xl steel-gradient uppercase">ABOUT</h2>
+</div>
+<div class="md:col-span-8">
+<p class="font-headline-md text-on-surface leading-[1.2] mb-12">
+                        With more than five years of experience in design, i focus on <span class="text-secondary">branding</span>, web design, and <span class="text-primary-fixed">user experience</span>. I blend technical precision with artistic flair to build immersive digital worlds.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-12 border-t border-white/10 pt-12">
+<div>
+<p class="font-label-mono text-slate-500 mb-4 uppercase">EXPERIENCE</p>
+<p class="font-body-lg text-slate-300">Specializing in high-fidelity 3D assets and motion environments for luxury brands and tech innovators.</p>
+</div>
+<div>
+<p class="font-label-mono text-slate-500 mb-4 uppercase">APPROACH</p>
+<p class="font-body-lg text-slate-300">Minimalism meets high-contrast bold. Creating depth through layering, lighting, and physical weight.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap bg-surface-container-lowest rounded-xl mx-4 md:mx-10 overflow-hidden">
+<div class="max-w-screen-xl mx-auto px-10">
+<p class="font-label-mono text-secondary-fixed-dim mb-12 text-center uppercase tracking-[0.3em]">SERVICES PROVIDED</p>
+<div class="divide-y divide-white/5">
+<div class="group py-12 flex justify-between items-center hover:px-8 transition-all duration-500 cursor-default">
+<div class="flex items-center gap-12">
+<span class="font-label-mono text-slate-600 text-2xl">01</span>
+<h3 class="font-headline-md text-white group-hover:tracking-wider transition-all duration-500">3D MODELING</h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-slate-700 group-hover:text-white transition-colors" data-icon="view_in_ar">view_in_ar</span>
+</div>
+<div class="group py-12 flex justify-between items-center hover:px-8 transition-all duration-500 cursor-default">
+<div class="flex items-center gap-12">
+<span class="font-label-mono text-slate-600 text-2xl">02</span>
+<h3 class="font-headline-md text-white group-hover:tracking-wider transition-all duration-500">RENDERING</h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-slate-700 group-hover:text-white transition-colors" data-icon="flare">flare</span>
+</div>
+<div class="group py-12 flex justify-between items-center hover:px-8 transition-all duration-500 cursor-default">
+<div class="flex items-center gap-12">
+<span class="font-label-mono text-slate-600 text-2xl">03</span>
+<h3 class="font-headline-md text-white group-hover:tracking-wider transition-all duration-500">MOTION DESIGN</h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-slate-700 group-hover:text-white transition-colors" data-icon="animation">animation</span>
+</div>
+<div class="group py-12 flex justify-between items-center hover:px-8 transition-all duration-500 cursor-default">
+<div class="flex items-center gap-12">
+<span class="font-label-mono text-slate-600 text-2xl">04</span>
+<h3 class="font-headline-md text-white group-hover:tracking-wider transition-all duration-500">BRANDING</h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-slate-700 group-hover:text-white transition-colors" data-icon="token">token</span>
+</div>
+<div class="group py-12 flex justify-between items-center hover:px-8 transition-all duration-500 cursor-default">
+<div class="flex items-center gap-12">
+<span class="font-label-mono text-slate-600 text-2xl">05</span>
+<h3 class="font-headline-md text-white group-hover:tracking-wider transition-all duration-500">WEB DESIGN</h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-slate-700 group-hover:text-white transition-colors" data-icon="web_asset">web_asset</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section (Sticky Stacking) -->
+<section class="py-section-gap px-container-padding max-w-screen-2xl mx-auto" id="projects">
+<h2 class="font-headline-xl text-white mb-20">SELECTED WORKS</h2>
+<div class="space-y-stack-offset relative">
+<!-- Project 1 -->
+<div class="sticky-card bg-[#141414] rounded-lg overflow-hidden h-[707px] flex flex-col md:flex-row border border-white/5">
+<div class="w-full md:w-1/2 p-12 flex flex-col justify-between">
+<div>
+<span class="font-label-mono text-secondary mb-4 uppercase">CASE STUDY 01</span>
+<h3 class="font-headline-xl text-white">Nextlevel Studio</h3>
+</div>
+<div>
+<p class="font-body-lg text-slate-400 mb-8 max-w-sm">A full 3D environment for a premium digital agency, focusing on kinetic typography and glassmorphism.</p>
+<button class="px-8 py-3 rounded-full cosmic-gradient text-white font-bold uppercase tracking-widest text-xs hover:scale-105 transition-transform">VIEW PROJECT</button>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-full bg-surface-container">
+<div class="w-full h-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-1000" data-alt="A sophisticated 3D workspace visualization featuring floating glass panels and glowing interfaces in a dark, minimalist studio setting. The atmosphere is cinematic with soft volumetric lighting and a premium color palette of charcoal, silver, and deep violet accents, showcasing the high-end creative direction for a digital agency." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBttuo6ynKWLPwTZbSsJrnR4YZjtizH5-H5ppY-CjthSrv5ZWZ0wlaIp0_agzd-9ox1ShXOzTfe3TrAT1QBXXPW6mL5jzKEkN2bX5Enl7HurCOMTTvjV9zisAlUQBusDhfRCzq6X4k1sr3Xb8lfX1W9rK06ZofgD3q3tMzSVxmW4_Y_9yQ_BYB-w4GGI9XfHIhEtJJgqP9XjZt1akw-dtxhtqTDJkz0wDAsEa43Gn9Enwu6tpSoIY6rfsGO32Dc4RWZBxRBinoaBzg')"></div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="sticky-card bg-[#141414] rounded-lg overflow-hidden h-[707px] flex flex-col md:flex-row border border-white/5 mt-stack-offset" style="top: 140px;">
+<div class="w-full md:w-1/2 p-12 flex flex-col justify-between">
+<div>
+<span class="font-label-mono text-secondary mb-4 uppercase">CASE STUDY 02</span>
+<h3 class="font-headline-xl text-white">Aura Brand Identity</h3>
+</div>
+<div>
+<p class="font-body-lg text-slate-400 mb-8 max-w-sm">Exploration of light and transparency for a wellness brand utilizing generative 3D particles and iridescent textures.</p>
+<button class="px-8 py-3 rounded-full cosmic-gradient text-white font-bold uppercase tracking-widest text-xs hover:scale-105 transition-transform">VIEW PROJECT</button>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-full bg-surface-container">
+<div class="w-full h-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-1000" data-alt="A mesmerizing generative art piece for a brand identity, showing iridescent fluid forms swirling together in a dark void. The lighting is ethereal and soft, emphasizing translucent layers and delicate light refractions with a vibrant, cosmic palette of neon pinks and deep space blues, embodying a sense of high-end wellness and technical precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGSogrF-AgZ9ibt1mpTeHDQU4MkmT_h1abuyrnUqMTJzJc1iRl6GSD81lgEyhvnDa9T4DN3fxe1uH0N8YOMJ-QdlDnNLnXL4t34TyXnN2esoqSfDNmMqgZESEcOt7w3Mb9Inizo3qVs9hw-GpDfPDPHmnTlp-odVkSNyIf3bh_Wq9vRcoFAb6f4UBx1UZPJYYQY9_3lHSlSekXtaAlLOOCujXSKyR6TEuriF5HkLBe6cg3uDbGlTAmnLW-OcMSNdLvEYGvJBXSdhs')"></div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="sticky-card bg-[#141414] rounded-lg overflow-hidden h-[707px] flex flex-col md:flex-row border border-white/5 mt-stack-offset" style="top: 180px;">
+<div class="w-full md:w-1/2 p-12 flex flex-col justify-between">
+<div>
+<span class="font-label-mono text-secondary mb-4 uppercase">CASE STUDY 03</span>
+<h3 class="font-headline-xl text-white">Solaris Digital</h3>
+</div>
+<div>
+<p class="font-body-lg text-slate-400 mb-8 max-w-sm">Developing a 3D-first design system for a future-tech platform, using monolithic forms and metallic surfaces.</p>
+<button class="px-8 py-3 rounded-full cosmic-gradient text-white font-bold uppercase tracking-widest text-xs hover:scale-105 transition-transform">VIEW PROJECT</button>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-full bg-surface-container">
+<div class="w-full h-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-1000" data-alt="A futuristic monolithic 3D structure floating against a star-dusted cosmic background. The surfaces are highly reflective polished titanium, catching sharp white and orange light highlights. The design feels massive and physically weighted, representing a technically advanced digital platform for a premium tech brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQjjKOoivb_XItvYCw06yAwEhftLug302u01sh1QdDChhEjSd61kzGOEUrue-Afp4Q6oEtFNGAV5kVFXXX90yw9cBo3oNCXvWb0OumhqBdsb-VLbj2DI8EwdVIMM68kTwox0pDSCU9KpOhRHU53b3D4aBbUYoCFE72uG_mEE2X4uIJBN58LrN8YULaSHzX-bp8gfTM4zKerd6X5Xa9LQq99eYSzJEsRgXxKUW5T5Zh18yK3Ere5q0gK7O9MDsWsm5aDOwlsNrYHzY')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap px- container-padding text-center">
+<h2 class="font-headline-xl text-white mb-8">Ready to bring your ideas to life?</h2>
+<p class="font-body-lg text-slate-400 mb-12 max-w-xl mx-auto">Currently accepting new projects for 2024. Let's create something unforgettable together.</p>
+<a class="inline-block px-12 py-5 rounded-full cosmic-gradient text-white font-black uppercase tracking-widest text-lg hover:scale-110 transition-transform shadow-2xl shadow-purple-500/20" href="{{DATA:SCREEN:SCREEN_12}}">START A PROJECT</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="full-width py-20 bg-transparent border-t border-white/5 mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8 w-full max-w-screen-2xl mx-auto">
+<p class="font-['Kanit'] uppercase text-xs tracking-[0.2em] text-slate-500">© 2024 MANISH. BUILT IN 3D SPACE.</p>
+<div class="flex gap-12">
+<a class="font-['Kanit'] uppercase text-xs tracking-[0.2em] text-slate-500 hover:text-white transition-colors underline decoration-purple-500" href="https://www.linkedin.com/in/d-manish-930514292/" target="_blank">LINKEDIN</a>
+<a class="font-['Kanit'] uppercase text-xs tracking-[0.2em] text-slate-500 hover:text-white transition-colors" href="https://github.com/MANISH-D-17" target="_blank">GITHUB</a>
+</div>
+</div>
+</footer>
+<!-- Bottom Nav Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center p-4">
+<div class="bg-[#0C0C0C]/80 backdrop-blur-2xl fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full border border-white/10 shadow-2xl shadow-purple-500/10 flex justify-around items-center p-4">
+<a class="flex flex-col items-center justify-center bg-gradient-to-tr from-purple-600 via-pink-500 to-orange-400 text-white rounded-full p-3 scale-110" href="{{DATA:SCREEN:SCREEN_6}}">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 p-3 hover:text-slate-200 transition-transform" href="{{DATA:SCREEN:SCREEN_2}}">
+<span class="material-symbols-outlined" data-icon="work_outline">work_outline</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 p-3 hover:text-slate-200 transition-transform" href="{{DATA:SCREEN:SCREEN_11}}">
+<span class="material-symbols-outlined" data-icon="payments">workspace_premium</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 p-3 hover:text-slate-200 transition-transform" href="{{DATA:SCREEN:SCREEN_12}}">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</a>
+</div>
+</nav>
+</body></html>
