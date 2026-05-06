@@ -5,7 +5,7 @@ const Visuals = () => {
   const [selectedImg, setSelectedImg] = useState(null);
 
   // Dynamically import all images from src/assets/photos
-  const imageModules = import.meta.glob('../assets/photos/*.{png,jpg,jpeg,webp,SVG}', { eager: true });
+  const imageModules = import.meta.glob('../assets/Photos/*.{png,jpg,jpeg,webp,SVG}', { eager: true });
   
   const photos = Object.entries(imageModules).map(([path, module], index) => {
     // Extract filename for the title
