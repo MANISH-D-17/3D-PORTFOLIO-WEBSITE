@@ -10,22 +10,19 @@ This portfolio is built using **React 19**, **Vite**, and **Three.js** (via Reac
 
 ### Key Features
 - **3D Interactive Elements**: Integrated Three.js models for achievements and awards.
-- **Skills Universe**: A responsive 3D orbital system showcasing technical expertise across all devices.
-- **Dynamic Asset Marquee**: A randomized, local-asset-powered dual-track marquee for projects and awards.
-- **Cinematic Void UI**: Custom-built CSS design system with HSL-tailored colors and smooth transitions.
-- **Responsive Architecture**: Fully optimized for desktop, tablet, and mobile viewing with collision-free navigation.
 - **GitHub API Integration**: Real-time project fetching and display from GitHub.
-- **Formspree Integration**: Fully functional contact form linked for professional inquiries.
+- **Cinematic Void UI**: Custom-built CSS design system with HSL-tailored colors and smooth transitions.
+- **Responsive Architecture**: Fully optimized for desktop, tablet, and mobile viewing.
+- **Dynamic Routing**: Smooth page transitions using Framer Motion.
 
 ## 🛠️ Tech Stack
 
 - **Core**: React 19, Vite
 - **3D Engine**: Three.js, React Three Fiber, React Three Drei
 - **Animation**: Framer Motion
-- **Styling**: Tailwind CSS v4, Vanilla CSS (PostCSS)
+- **Styling**: Tailwind CSS, Vanilla CSS
 - **Data**: GitHub API Integration
 - **Form Handling**: Formspree
-- **Accessibility**: ARIA-compliant forms with autocomplete optimization.
 
 ## 📦 Installation
 

@@ -113,36 +113,31 @@ const Contact = () => {
                   <form className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-2">
-                        <label htmlFor="name" className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">Name</label>
+                        <label className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">Name</label>
                         <input 
                           type="text" 
-                          id="name"
                           name="name" 
                           value={formData.name}
                           onChange={handleInputChange}
-                          autoComplete="name"
                           placeholder="Your Name"
                           className="w-full bg-transparent border-b border-white/10 focus:border-secondary py-3 text-xl transition-all outline-none"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="email" className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">Email</label>
+                        <label className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">Email</label>
                         <input 
                           type="email" 
-                          id="email"
                           name="email" 
                           value={formData.email}
                           onChange={handleInputChange}
-                          autoComplete="email"
                           placeholder="your@email.com"
                           className="w-full bg-transparent border-b border-white/10 focus:border-secondary py-3 text-xl transition-all outline-none"
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="message" className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">Vision</label>
+                      <label className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">Vision</label>
                       <textarea 
-                        id="message"
                         name="message" 
                         value={formData.message}
                         onChange={handleInputChange}
